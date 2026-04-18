@@ -1,0 +1,24 @@
+{
+  "alfred": {
+    "meta": {
+      "title": "Alfred Platform",
+      "type": "software"
+    },
+    "github": [
+      "https://github.com/lamen-tribe/alfred-backend",
+      "https://github.com/lamen-tribe/alfred-chat",
+      "https://github.com/lamen-tribe/alfred-docs",
+      "https://github.com/lamen-tribe/alfred-importacao-dados",
+      "https://github.com/lamen-tribe/alfred-worker",
+      "https://github.com/lamen-tribe/wave-frontend"
+    ],
+    "git": [
+      "https://github.com/lamen-tribe/alfred-backend",
+      "https://github.com/lamen-tribe/alfred-chat",
+      "https://github.com/lamen-tribe/alfred-docs",
+      "https://github.com/lamen-tribe/alfred-importacao-dados",
+      "https://github.com/lamen-tribe/alfred-worker",
+      "https://github.com/lamen-tribe/wave-frontend"
+    ]
+  }
+}

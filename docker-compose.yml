@@ -1,0 +1,147 @@
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch-oss:7.9.1
+    container_name: devanalitics-es
+    environment:
+      - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
+      - cluster.routing.allocation.disk.threshold_enabled=false
+    ports:
+      - "9200:9200"
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:9200/_cluster/health | grep -q '\"status\":\"green\\|yellow\"'"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana-oss:7.9.1
+    container_name: devanalitics-kibana
+    ports:
+      - "5601:5601"
+    environment:
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+
+  mariadb:
+    image: mariadb:10.11
+    container_name: devanalitics-mariadb
+    environment:
+      - MARIADB_ROOT_PASSWORD=${SORTINGHAT_DB_PASSWORD}
+      - MARIADB_DATABASE=sortinghat_db
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mariadb-admin", "ping", "-h", "localhost", "-uroot", "-p${SORTINGHAT_DB_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    container_name: devanalitics-redis
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  sortinghat:
+    image: grimoirelab/grimoirelab:latest
+    container_name: devanalitics-sortinghat
+    user: root
+    environment:
+      - SORTINGHAT_SECRET_KEY=${SORTINGHAT_SECRET_KEY}
+      - SORTINGHAT_DB_HOST=mariadb
+      - SORTINGHAT_DB_PORT=3306
+      - SORTINGHAT_DB_USER=root
+      - SORTINGHAT_DB_PASSWORD=${SORTINGHAT_DB_PASSWORD}
+      - SORTINGHAT_DB_DATABASE=sortinghat_db
+      - SORTINGHAT_REDIS_HOST=redis
+      - SORTINGHAT_REDIS_PORT=6379
+      - SORTINGHAT_ALLOWED_HOST=sortinghat,localhost,127.0.0.1
+      - SORTINGHAT_HTTP_DEV=0.0.0.0:8000
+      - SORTINGHAT_SUPERUSER_USERNAME=${SORTINGHAT_USER}
+      - SORTINGHAT_SUPERUSER_PASSWORD=${SORTINGHAT_PASSWORD}
+      - PYTHONPATH=/sh_custom
+    volumes:
+      - ./conf/sortinghat_settings.py:/sh_custom/sh_custom_settings.py:ro
+      - ./conf/sh_custom_urls.py:/sh_custom/sh_custom_urls.py:ro
+    depends_on:
+      mariadb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    ports:
+      - "9314:8000"
+    command:
+      - sh
+      - -c
+      - |
+        sortinghat-admin --config sh_custom_settings setup || echo "Setup already done"
+        exec sortinghatd --config sh_custom_settings --dev --no-auth
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8000/ > /dev/null || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+      start_period: 40s
+
+  sortinghat-worker:
+    image: grimoirelab/grimoirelab:latest
+    container_name: devanalitics-sortinghat-worker
+    user: root
+    environment:
+      - SORTINGHAT_SECRET_KEY=${SORTINGHAT_SECRET_KEY}
+      - SORTINGHAT_DB_HOST=mariadb
+      - SORTINGHAT_DB_PORT=3306
+      - SORTINGHAT_DB_USER=root
+      - SORTINGHAT_DB_PASSWORD=${SORTINGHAT_DB_PASSWORD}
+      - SORTINGHAT_DB_DATABASE=sortinghat_db
+      - SORTINGHAT_REDIS_HOST=redis
+      - SORTINGHAT_REDIS_PORT=6379
+      - SORTINGHAT_ALLOWED_HOST=sortinghat,localhost,127.0.0.1
+      - PYTHONPATH=/sh_custom
+    volumes:
+      - ./conf/sortinghat_settings.py:/sh_custom/sh_custom_settings.py:ro
+      - ./conf/sh_custom_urls.py:/sh_custom/sh_custom_urls.py:ro
+    depends_on:
+      sortinghat:
+        condition: service_healthy
+    command: sortinghatw --config sh_custom_settings
+
+  mordred:
+    image: grimoirelab/grimoirelab:latest
+    container_name: devanalitics-mordred
+    environment:
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - SORTINGHAT_USER=${SORTINGHAT_USER}
+      - SORTINGHAT_PASSWORD=${SORTINGHAT_PASSWORD}
+    volumes:
+      - ./conf:/home/user/conf:ro
+      - ./logs:/home/user/logs
+      - ./tmp:/home/user/tmp
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+      sortinghat:
+        condition: service_healthy
+    command:
+      - sh
+      - -c
+      - |
+        git config --global credential.helper store && \
+        echo "https://$$GITHUB_TOKEN:x-oauth-basic@github.com" > ~/.git-credentials && \
+        sed -e "s|%(GITHUB_TOKEN)s|$$GITHUB_TOKEN|g" -e "s|%(SORTINGHAT_USER)s|$$SORTINGHAT_USER|g" -e "s|%(SORTINGHAT_PASSWORD)s|$$SORTINGHAT_PASSWORD|g" /home/user/conf/setup.cfg > /tmp/setup.cfg && \
+        sirmordred -c /tmp/setup.cfg
+    restart: "no"
+
+volumes:
+  es_data:
+    driver: local
+  mariadb_data:
+    driver: local

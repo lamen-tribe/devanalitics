@@ -1,0 +1,416 @@
+[
+  {
+    "mk": "0e9d599afe2e240302ba02bddb76b91f606142dc",
+    "identities": [
+      {
+        "uuid": "0e9d599afe2e240302ba02bddb76b91f606142dc",
+        "source": "git",
+        "name": "Bruno Almeida",
+        "email": "brunoalmeida@pop-os.localdomain",
+        "username": null
+      },
+      {
+        "uuid": "398fb73fb7efe869e2ffea848a4487495c8e3c04",
+        "source": "github",
+        "name": "BRUNO PEREIRA DE ALMEIDA",
+        "email": "bruno.hung@gmail.com",
+        "username": "brunopa"
+      },
+      {
+        "uuid": "47e0d4fccbf8c31a90dbcdcfe03114ce3314a2f5",
+        "source": "git",
+        "name": "Bruno Almeida",
+        "email": "bruno.hung@gmail.com",
+        "username": null
+      },
+      {
+        "uuid": "5738298219bfef0012ddabf99685e2abd2f104b0",
+        "source": "git",
+        "name": "BRUNO PEREIRA DE ALMEIDA",
+        "email": "bruno.hung@gmail.com",
+        "username": null
+      }
+    ],
+    "profile": {
+      "name": "Bruno Almeida",
+      "email": "brunoalmeida@pop-os.localdomain",
+      "isBot": false
+    }
+  },
+  {
+    "mk": "7d6f00727c5e6cbd031c66bca614001fd39f462d",
+    "identities": [
+      {
+        "uuid": "008f7a8ac88ae65321d54f62505b6354daaea5a5",
+        "source": "git",
+        "name": "Bianca",
+        "email": "bianca@buscaprev.com.br",
+        "username": null
+      },
+      {
+        "uuid": "316a95064c5eecded96763b4831cf3ed2c0be6b6",
+        "source": "git",
+        "name": "Bianca Lima",
+        "email": "32437813+limabia@users.noreply.github.com",
+        "username": null
+      },
+      {
+        "uuid": "7d6f00727c5e6cbd031c66bca614001fd39f462d",
+        "source": "github",
+        "name": "Bianca Lima",
+        "email": null,
+        "username": "limabia"
+      },
+      {
+        "uuid": "9ef7a4dd88aee16a1c26bea14caf2fdb0206ac2d",
+        "source": "git",
+        "name": "Bianca",
+        "email": "bianca.lima.1504@gmail.com",
+        "username": null
+      }
+    ],
+    "profile": {
+      "name": "Bianca Lima",
+      "email": "32437813+limabia@users.noreply.github.com",
+      "isBot": false
+    }
+  },
+  {
+    "mk": "9e7970cb5116ab1b44e5bae09606740b2fc32655",
+    "identities": [
+      {
+        "uuid": "772d3ebeaf5056c79c378dd39df59384a6c7eed5",
+        "source": "github",
+        "name": "Andre Raposo",
+        "email": "andreraposo@protonmail.com",
+        "username": "andreraposo"
+      },
+      {
+        "uuid": "9e7970cb5116ab1b44e5bae09606740b2fc32655",
+        "source": "git",
+        "name": "Andre",
+        "email": "andre@Andres-Mac-mini.local",
+        "username": null
+      },
+      {
+        "uuid": "a264ce380fe395840b882ed6c0a1c694c3261cdd",
+        "source": "git",
+        "name": "Andre Raposo",
+        "email": "andreraposo@segurize.com.br",
+        "username": null
+      },
+      {
+        "uuid": "f0d8379b7747be7a0727acef0cc70829295cc0d0",
+        "source": "git",
+        "name": "Andre Raposo",
+        "email": "andreraposo@protonmail.com",
+        "username": null
+      }
+    ],
+    "profile": {
+      "name": "Andre",
+      "email": "andre@Andres-Mac-mini.local",
+      "isBot": false
+    }
+  },
+  {
+    "mk": "9f6bfd700138881ac7ab2a49b91ffdf3e561ce1b",
+    "identities": [
+      {
+        "uuid": "02667765712d3933a6344ac94b4a3727a730bcbc",
+        "source": "git",
+        "name": "bruno Abe",
+        "email": "brunoabe@segurize.com.br",
+        "username": null
+      },
+      {
+        "uuid": "417c850d7c37630df7ff30929e48d26b52a9ee77",
+        "source": "git",
+        "name": "Bruno Abe",
+        "email": "112639859+abebruno@users.noreply.github.com",
+        "username": null
+      },
+      {
+        "uuid": "59630ba25725448f63a4a87ff32dc96b6e7ea756",
+        "source": "git",
+        "name": "brunoabe",
+        "email": "brunoabe@buscaprev.com.br",
+        "username": null
+      },
+      {
+        "uuid": "9f6bfd700138881ac7ab2a49b91ffdf3e561ce1b",
+        "source": "github",
+        "name": "Bruno Abe",
+        "email": null,
+        "username": "abebruno"
+      },
+      {
+        "uuid": "b80507faa2073f41c917665f22cf1de78157100d",
+        "source": "git",
+        "name": "brunoabe",
+        "email": "bruno@arch.localdomain",
+        "username": null
+      }
+    ],
+    "profile": {
+      "name": "Bruno Abe",
+      "email": "112639859+abebruno@users.noreply.github.com",
+      "isBot": false
+    }
+  },
+  {
+    "mk": "a7d6f9a43fdf6919c2ed0fdcaec3b3e23d269e97",
+    "identities": [
+      {
+        "uuid": "1290e59c27f4b249637a6c7dbcf2960d02d29490",
+        "source": "git",
+        "name": "Claude Opus 4.6",
+        "email": "noreply@anthropic.com",
+        "username": null
+      },
+      {
+        "uuid": "39995ad9cf2ce67db1921212446461e315af3180",
+        "source": "git",
+        "name": "Claude Opus 4.7",
+        "email": "noreply@anthropic.com",
+        "username": null
+      },
+      {
+        "uuid": "7fccb3c4e853231e2bd3e98048bef0407e4b72ed",
+        "source": "git",
+        "name": "Claude Opus 4.6 (1M context)",
+        "email": "noreply@anthropic.com",
+        "username": null
+      },
+      {
+        "uuid": "a7d6f9a43fdf6919c2ed0fdcaec3b3e23d269e97",
+        "source": "git",
+        "name": "Claude Opus 4.7 (1M context)",
+        "email": "noreply@anthropic.com",
+        "username": null
+      },
+      {
+        "uuid": "d7711da786c9c21bc4faace16475c22c31adc07b",
+        "source": "git",
+        "name": "Claude",
+        "email": "noreply@anthropic.com",
+        "username": null
+      },
+      {
+        "uuid": "fc2528ea3bdb9dc08c0077be6b10c6408b73a5c7",
+        "source": "git",
+        "name": "Claude Sonnet 4.6",
+        "email": "noreply@anthropic.com",
+        "username": null
+      },
+      {
+        "uuid": "ff19d373ec993f0703021d3ac7fd43187a2e4b36",
+        "source": "git",
+        "name": "Claude Sonnet 4.6 (1M context)",
+        "email": "noreply@anthropic.com",
+        "username": null
+      }
+    ],
+    "profile": {
+      "name": "Claude Opus 4.7 (1M context)",
+      "email": "noreply@anthropic.com",
+      "isBot": false
+    }
+  },
+  {
+    "mk": "c780b9e5b86174118a9dbc1b738e9cd0e5fa3566",
+    "identities": [
+      {
+        "uuid": "c780b9e5b86174118a9dbc1b738e9cd0e5fa3566",
+        "source": "git",
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "username": null
+      }
+    ],
+    "profile": {
+      "name": "GitHub",
+      "email": "noreply@github.com",
+      "isBot": false
+    }
+  },
+  {
+    "mk": "cc8a4cb06e083425a1edeb0a0676ad7a57ceb14e",
+    "identities": [
+      {
+        "uuid": "77cc4070cc07a680233cb135f2418afa4fefadfb",
+        "source": "github",
+        "name": null,
+        "email": null,
+        "username": "cordeiror"
+      },
+      {
+        "uuid": "cc8a4cb06e083425a1edeb0a0676ad7a57ceb14e",
+        "source": "git",
+        "name": "cordeiror",
+        "email": "renato.cordeiro@gmail.com",
+        "username": null
+      }
+    ],
+    "profile": {
+      "name": "cordeiror",
+      "email": "renato.cordeiro@gmail.com",
+      "isBot": false
+    }
+  },
+  {
+    "mk": "dd8f38e9334b5bed0b3bf27e56274c74984f9047",
+    "identities": [
+      {
+        "uuid": "7fbad62eac350a60562975b5dbb51789ef59ad68",
+        "source": "git",
+        "name": "openhands",
+        "email": "openhands@all-hands.dev",
+        "username": null
+      },
+      {
+        "uuid": "dd8f38e9334b5bed0b3bf27e56274c74984f9047",
+        "source": "git",
+        "name": "Elaina (OpenHands)",
+        "email": "elaina@klp.com.br",
+        "username": null
+      }
+    ],
+    "profile": {
+      "name": "Elaina (OpenHands)",
+      "email": "elaina@klp.com.br",
+      "isBot": false
+    }
+  },
+  {
+    "mk": "e4328517c4fc5fa394f3920e7511b1d15f5e21b0",
+    "identities": [
+      {
+        "uuid": "33e4a811019a2060fb3a3fac030d843e9b1ff290",
+        "source": "git",
+        "name": "Barbara (Alfred AI)",
+        "email": "barbara@klp.com.br",
+        "username": null
+      },
+      {
+        "uuid": "e4328517c4fc5fa394f3920e7511b1d15f5e21b0",
+        "source": "git",
+        "name": "Barbara (AI)",
+        "email": "rafael@klp.com.br",
+        "username": null
+      }
+    ],
+    "profile": {
+      "name": "Barbara (AI)",
+      "email": "rafael@klp.com.br",
+      "isBot": false
+    }
+  },
+  {
+    "mk": "e70e0e479e066cb2d0c275a42de6fb9b1e9f3133",
+    "identities": [
+      {
+        "uuid": "0055920596a03464a7fd54947e35290e81d6b383",
+        "source": "git",
+        "name": "Vinicius Eustaquio Cortez",
+        "email": "viniciusecortez@outlook.com",
+        "username": null
+      },
+      {
+        "uuid": "375febaa6dcb7122076c2f6e03dc49f2c87820b1",
+        "source": "github",
+        "name": "Vinicius Cortez",
+        "email": null,
+        "username": "viniciusecortez"
+      },
+      {
+        "uuid": "836d4a2e7f76126c4f6062c282853a3a8666a779",
+        "source": "git",
+        "name": "Vinicius Cortez",
+        "email": "viniciusecortez@outlook.com",
+        "username": null
+      },
+      {
+        "uuid": "e70e0e479e066cb2d0c275a42de6fb9b1e9f3133",
+        "source": "git",
+        "name": "Vinicius",
+        "email": "viniciusecortez@outlook.com",
+        "username": null
+      },
+      {
+        "uuid": "f12087e512357359acdfc3870dc041667f6de443",
+        "source": "git",
+        "name": "Vinicius Cortez",
+        "email": "viniciusecortez@gmail.com",
+        "username": null
+      }
+    ],
+    "profile": {
+      "name": "Vinicius",
+      "email": "viniciusecortez@outlook.com",
+      "isBot": false
+    }
+  },
+  {
+    "mk": "ebb50e6a2f8abb6493ebe4c6f7f860df7612165b",
+    "identities": [
+      {
+        "uuid": "3205fe866b6b6544911ebf0926d15120d6d19047",
+        "source": "git",
+        "name": "Rafael Braz",
+        "email": "rafael@segurize.com.br",
+        "username": null
+      },
+      {
+        "uuid": "5c9ced65f8593985bf36e131caa282a55838ae76",
+        "source": "github",
+        "name": "Rafael Braz",
+        "email": null,
+        "username": "rrbraz"
+      },
+      {
+        "uuid": "d42d117add95bb45b30bf7f939444cc84b18087f",
+        "source": "git",
+        "name": "Rafael Braz",
+        "email": "rbraz@klp.com.br",
+        "username": null
+      },
+      {
+        "uuid": "d559ed00a50cc48606d2070c17669f6c02a386d6",
+        "source": "git",
+        "name": "Rafael Braz",
+        "email": "rafael@rbraz.net",
+        "username": null
+      },
+      {
+        "uuid": "ebb50e6a2f8abb6493ebe4c6f7f860df7612165b",
+        "source": "git",
+        "name": "rafael",
+        "email": "rafael@segurize.com.br",
+        "username": null
+      }
+    ],
+    "profile": {
+      "name": "rafael",
+      "email": "rafael@segurize.com.br",
+      "isBot": false
+    }
+  },
+  {
+    "mk": "ee14a48f215f1cd8783df73145e9f421fbaeda37",
+    "identities": [
+      {
+        "uuid": "ee14a48f215f1cd8783df73145e9f421fbaeda37",
+        "source": "git",
+        "name": "google-labs-jules[bot]",
+        "email": "161369871+google-labs-jules[bot]@users.noreply.github.com",
+        "username": null
+      }
+    ],
+    "profile": {
+      "name": "google-labs-jules[bot]",
+      "email": "161369871+google-labs-jules[bot]@users.noreply.github.com",
+      "isBot": false
+    }
+  }
+]
