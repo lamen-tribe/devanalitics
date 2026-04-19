@@ -108,7 +108,14 @@ else
     warn "Mordred pode ter terminado com avisos — veja logs/mordred_bootstrap.log"
 fi
 
-# ── 5. Importar dashboards e visualizações no Kibana ─────────────────────
+# ── 5. Sincronizar author_name com profile.name do SortingHat ────────────
+# Corrige docs enriquecidos antes dos merges (autorefresh=false não os revisita)
+if [ -x "scripts/sync-names-from-sortinghat.sh" ]; then
+    info "▶ Sincronizando nomes no ES com profiles do SortingHat..."
+    ./scripts/sync-names-from-sortinghat.sh || warn "sync-names falhou — rode manualmente depois"
+fi
+
+# ── 6. Importar dashboards e visualizações no Kibana ─────────────────────
 if [ -f "bootstrap/kibana_objects.ndjson" ]; then
     info "▶ Importando dashboards no Kibana..."
     KIBANA_URL="http://localhost:5601" \
