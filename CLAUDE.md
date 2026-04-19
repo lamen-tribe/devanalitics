@@ -61,21 +61,27 @@ SortingHat UI merge → update-after-merge.sh → (if name still wrong) → fix-
 
 **Step 3 — Fix stale names (if still wrong after step 2):**
 
-With `autorefresh = false` in `setup.cfg`, sirmordred does **not** re-enrich documents that already have `author_uuid` populated. Old commits enriched before the SortingHat merge keep the raw git name. Fix them directly in ES:
+With `autorefresh = false` in `setup.cfg`, sirmordred does **not** re-enrich documents that already have `author_uuid` populated. Old commits enriched before the SortingHat merge keep the raw git name. Two options:
 
+**Option A — Bulk sync all individuals (preferred after SortingHat profile renames):**
+```bash
+./scripts/sync-names-from-sortinghat.sh --dry-run  # preview changes
+./scripts/sync-names-from-sortinghat.sh             # apply
+```
+Iterates every SortingHat individual, collects all its identity uuids, and forces `author_name` in ES to match the current `profile.name`. **This is the authoritative sync** — SortingHat profile is the source of truth.
+
+**Option B — Fix a single name manually:**
 ```bash
 ./scripts/fix-identity-name.sh "nome errado" "Nome Correto"
 
-# Examples:
+# Example:
 ./scripts/fix-identity-name.sh "rafael"               "Rafael Braz"
 ./scripts/fix-identity-name.sh "Rafael Rodrigues Braz" "Rafael Braz"
-./scripts/fix-identity-name.sh "andre"                "Andre Raposo"
-./scripts/fix-identity-name.sh "Andre"                "Andre Raposo"
-./scripts/fix-identity-name.sh "Vinicius"             "Vinicius Cortez"
-./scripts/fix-identity-name.sh "Vinicius Eustaquio Cortez" "Vinicius Cortez"
 ```
 
-The script finds all `author_uuid` values associated with the wrong name and bulk-updates `author_name` across `git_enriched`, `github_enriched`, and `github2_enriched` via ES `_update_by_query`. Then reload Kibana.
+Both scripts use `author_uuid` (per-identity hash, not the individual's `mk`) to find documents and bulk-update `author_name` across `git_enriched`, `github_enriched`, and `github2_enriched` via ES `_update_by_query`. Then reload Kibana.
+
+**If you manually renamed things in ES before aligning SortingHat profiles**, running `sync-names-from-sortinghat.sh` will revert them to match SortingHat (since SH is the source of truth). Rename the profile in the SortingHat UI first if you want a specific display name.
 
 ### Why names stay wrong after a SortingHat merge
 
